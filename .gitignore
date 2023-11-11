@@ -1,0 +1,42 @@
+# Arquivos do ambiente virtual
+venv/
+__pycache__/
+
+# Arquivos de configuração específicos para o ambiente local
+*.sqlite3
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+db.sqlite3-journal
+
+# Arquivos de configuração IDE
+.idea/
+.vscode/
+
+# Arquivos específicos do PyCharm
+*.iml
+*.pyd
+
+# Arquivos gerados automaticamente
+*.pyc
+*.pyo
+__pycache__/
+
+# Arquivos de log
+*.log
+
+# Arquivos de mídia e arquivos estáticos gerados
+media/
+static/
+
+# Arquivos de configuração que podem conter informações sensíveis
+*.env
+
+# Arquivos de cache
+__pycache__/
+.cache/
+
+# Arquivos temporários
+*.swp
+*~
