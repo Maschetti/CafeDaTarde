@@ -40,3 +40,5 @@ __pycache__/
 # Arquivos temporários
 *.swp
 *~
+
+*/migrations/
