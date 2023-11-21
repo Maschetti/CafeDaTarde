@@ -8,4 +8,5 @@ urlpatterns = [
     path('home/', views.home_view, name='home'),
     path('register/', views.register_view, name='register'),
     path('post/', views.post_view, name='post'),
+    path('post_list/', views.post_list_view, name='post_list'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

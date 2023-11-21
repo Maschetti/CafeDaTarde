@@ -31,3 +31,7 @@ def post_view(request):
         form = PostForm()
         
     return render(request,'form.html', {'form': form})
+
+def post_list_view(request):
+    posts = Post.objects.all()
+    return render(request, 'posts.html', {'posts': posts})
