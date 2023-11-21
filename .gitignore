@@ -28,7 +28,6 @@ __pycache__/
 
 # Arquivos de mídia e arquivos estáticos gerados
 media/
-static/
 
 # Arquivos de configuração que podem conter informações sensíveis
 *.env
