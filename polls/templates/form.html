@@ -1,5 +1,13 @@
+{% load static %}
+<link href="{% static 'div.css'%}" rel="stylesheet">
 <form method="post" action=".">
     {% csrf_token %}
+    {% for field in form %}
+    <div>
+        Color
+        {{ field.label }}
+    </div>
+    {% endfor %}
     {{ form.as_p }}
     <input type="submit" value="Enviar">
 </form>
