@@ -1,6 +1,10 @@
 from django.forms import ModelForm
 from .models import User, Post
 
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=65, widget=forms.PasswordInput)
+
 class UserForm(ModelForm):
     class Meta:
         model = User
