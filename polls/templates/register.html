@@ -1,0 +1,61 @@
+{% load static %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Bootstrap JS (opcional, se você planeja usar componentes interativos) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+<form method="post" action=".">
+    {% csrf_token %}
+
+    <div> 
+        <h5>Faça Sua ContaCafé</h5>
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" name="username" maxlength="100" required>
+            </p>
+        
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+            </p>
+
+            <p>
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" maxlength="30" required>
+            </p>
+
+            <p>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" maxlength="30" required>
+            </p>
+        
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="phone">Phone:</label>
+                <input type="text" name="phone" maxlength="15" required>
+            </p>
+
+        
+        <!-- <button type="submit" class="btn custom-btn">Enviar</button> -->
+        <button type="submit" class="button">Enviar</button>
+
+
+        <h5>Já é registrado? Entre</h5>
+    </div>
+</form>
+
+
+
+
+
+
+

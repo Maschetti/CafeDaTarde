@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from django import forms
 from .models import User, Post
 
+
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50)
     password = forms.CharField(max_length=65, widget=forms.PasswordInput)

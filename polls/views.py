@@ -19,7 +19,7 @@ def register_view(request):
     else:
         form = UserForm()
         
-    return render(request,'form.html', {'form': form})
+    return render(request,'register.html', {'form': form})
 
 def post_view(request):
     if request.method == 'POST':

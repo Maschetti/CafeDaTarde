@@ -1,0 +1,42 @@
+/* Estilo para a página de cadastro */
+
+body {
+    background-color: #f8f9fa; /* Cor de fundo cinza claro */
+}
+
+form {
+    max-width: 400px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaçamento entre grupos de formulário */
+}
+
+label {
+    color: #495057; /* Cor do texto do rótulo */
+}
+
+input {
+    width: 100%; /* Largura total do campo de entrada */
+    padding: 8px; /* Espaçamento interno do campo de entrada */
+    border: 1px solid #ced4da; /* Borda do campo de entrada */
+    border-radius: 4px; /* Borda arredondada do campo de entrada */
+    background-color: #ffffff; /* Cor de fundo branca */
+}
+
+button {
+    width: 100%; /* Largura total do botão */
+    padding: 10px; /* Espaçamento interno do botão */
+    background-color: #007bff; /* Cor de fundo azul (pode ser alterada) */
+    color: #ffffff; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 4px; /* Borda arredondada do botão */
+    cursor: pointer; /* Adiciona cursor de ponteiro ao passar o mouse sobre o botão */
+}
+
+h5 {
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 10px; /* Espaçamento superior para os h5 */
+    color: #495057; /* Cor do texto dos h5 */
+}
