@@ -1,0 +1,26 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #f8f9fa !important; /* Cor de fundo do cabeçalho */
+}
+
+.navbar-brand {
+    color: #000 !important; /* Cor do texto da marca no cabeçalho (preto) */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    margin-left: auto; /* Mover os itens para o canto direito */
+}
+
+.navbar-nav a {
+    color: #000 !important; /* Cor dos links no cabeçalho (preto) */
+    margin-right: 15px; /* Espaçamento entre os links */
+}
+
+.navbar-nav a:hover {
+    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre os links */
+}

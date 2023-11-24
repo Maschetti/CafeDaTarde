@@ -11,6 +11,12 @@ class User(AbstractUser):
     phone = models.CharField(max_length=15, blank=True, null=True)
     is_journalist = models.BooleanField(default=False)
     picture = models.OneToOneField(Image, on_delete=models.SET_NULL, null=True, blank=True)
+    
+    def authenticate(username, password):
+        user = User.objects.get(username=username)
+        if user.password == password:
+            return user
+        return None
 
 class Post(models.Model):
     title = models.CharField(max_length=200)

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.contrib.auth import login
 from PIL import Image
 from .models import User, Post
 from .forms import UserForm, PostForm
@@ -15,11 +16,25 @@ def register_view(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('ct:home')
+            return redirect('ct:login')
     else:
         form = UserForm()
         
     return render(request,'register.html', {'form': form})
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = User.authenticate(username, password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect('ct:home')
+        else:
+            messages.error(request, 'Falha ao fazer login')
+        
+    return render(request, 'login.html')
 
 def post_view(request):
     if request.method == 'POST':
@@ -34,4 +49,4 @@ def post_view(request):
 
 def post_list_view(request):
     posts = Post.objects.all()
-    return render(request, 'posts.html', {'posts': posts})
+    return render(request, 'home.html', {'posts': posts})
