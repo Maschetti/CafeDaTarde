@@ -30,7 +30,7 @@ def post_view(request):
     else:
         form = PostForm()
         
-    return render(request,'form.html', {'form': form})
+    return render(request,'posts.html', {'form': form})
 
 def post_list_view(request):
     posts = Post.objects.all()
