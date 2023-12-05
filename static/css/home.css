@@ -27,3 +27,7 @@ body {
 .card-body {
     padding: 20px;
 }
+
+h1.card-title {
+    font-size: 28px; /* Defina o tamanho do título desejado */
+}

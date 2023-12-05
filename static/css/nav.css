@@ -4,11 +4,12 @@ body {
 
 .navbar {
     background-color: #f8f9fa !important; /* Cor de fundo do cabeçalho */
+    border-bottom: 1px solid black;
 }
 
 .navbar-brand {
     color: #000 !important; /* Cor do texto da marca no cabeçalho (preto) */
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
 }
 

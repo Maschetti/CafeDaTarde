@@ -3,13 +3,26 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import login
 from PIL import Image
-from .models import User, Post
+from .models import User, Post, Image
 from .forms import UserForm, PostForm
 import os
 
 # Create your views here.
 def home_view(request):
     return HttpResponse('Bem vindo ao Cafe da Tarde!')
+
+def profile_view(request):
+    user = request.user
+    
+    if request.method == 'POST':
+        print("ENTROU")
+        img = Image.objects.create(image=request.POST.get('myfile'), title='profile_pic')
+        print(img)
+        user.picture.image = img
+        
+        user.save()
+    
+    return render(request, 'profile.html', {'user': user})
 
 def register_view(request):
     if request.method == 'POST':
