@@ -1,0 +1,13 @@
+.sidebar {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 90px;
+    left: 10px;
+    width: 200px;
+    background-color: rgba(204, 204, 204, 0.762);
+} 
+
+.sec {
+    color: #000 !important;
+}

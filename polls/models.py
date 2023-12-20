@@ -17,6 +17,19 @@ class User(AbstractUser):
         if user.password == password:
             return user
         return None
+    
+class Section(models.Model):
+    name = models.CharField(max_length=60)
+    
+    def __str__(self):
+        return self.name
+    
+class Tag(models.Model):
+    name = models.CharField(max_length=60)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name 
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -24,4 +37,9 @@ class Post(models.Model):
     image = models.OneToOneField(Image, on_delete=models.SET_NULL, null=True, blank=True)
     user_id = models.PositiveIntegerField()
     pub_date = models.DateField(default=timezone.now)
-    
+    section = models.ForeignKey(Section, on_delete=models.SET_NULL, null=True)
+    tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True)
+        
+    def __str__(self):
+        return self.title
+        

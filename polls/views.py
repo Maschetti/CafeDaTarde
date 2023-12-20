@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import login
 from PIL import Image
-from .models import User, Post, Image
+from .models import User, Post, Image, Section
 from .forms import UserForm, PostForm
 import os
 
@@ -13,6 +13,9 @@ def home_view(request):
 
 def profile_view(request):
     user = request.user
+    posts = None
+    if user.is_journalist:
+        posts = Post.objects.filter(user_id=user.id)
     
     if request.method == 'POST':
         print("ENTROU")
@@ -22,7 +25,7 @@ def profile_view(request):
         
         user.save()
     
-    return render(request, 'profile.html', {'user': user})
+    return render(request, 'profile.html', {'user': user, 'posts': posts})
 
 def register_view(request):
     if request.method == 'POST':
@@ -62,4 +65,13 @@ def post_view(request):
 
 def post_list_view(request):
     posts = Post.objects.all()
-    return render(request, 'home.html', {'posts': posts})
+    sections = Section.objects.all()
+    
+    return render(request, 'home.html', {'posts': posts, 'sections': sections})
+
+def section_view(request, name):
+    posts = Post.objects.filter(section__name=name)
+    sections = Section.objects.all()
+
+    return render(request, 'home.html', {'posts': posts, 'sections': sections})
+            

@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
 <link href="{% static 'css/home.css'%}" rel="stylesheet">
+
+{% include 'sidebar.html' with sectios=sections %}
+
 {% for post in posts %}
 <div class="container mt-4">
     <div class="card">
@@ -16,5 +19,6 @@
         </div>
     </div>
 </div>
+
 {% endfor %}
 {% endblock %}
